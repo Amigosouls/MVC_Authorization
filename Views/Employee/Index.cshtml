@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MVC_Authorization.Models.Trainee>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.trainee_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.trainee_img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.training.training_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.trainee_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trainee_img)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.training.training_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.trainee_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.trainee_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.trainee_id })
+        </td>
+    </tr>
+}
+
+</table>
